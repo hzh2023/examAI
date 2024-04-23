@@ -25,7 +25,7 @@
       <el-header class="align-center">
         <h1>{{form.name}}</h1>
         <div>
-          <span class="question-title-padding">试卷总分：{{form.score}}</span>
+          <span class="question-title-padding">考试总分：{{form.score}}</span>
           <span class="question-title-padding">考试时间：{{form.suggestTime}}分钟</span>
         </div>
       </el-header>
@@ -132,7 +132,7 @@ export default {
       _this.formLoading = true
       examPaperAnswerApi.answerSubmit(this.answer).then(re => {
         if (re.code === 1) {
-          _this.$alert('试卷得分：' + re.response + '分', '考试结果', {
+          _this.$alert('考试得分：' + re.response + '分', '考试结果', {
             confirmButtonText: '返回考试记录',
             callback: action => {
               _this.$router.push('/record/index')

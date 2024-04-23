@@ -1,7 +1,7 @@
 <template>
   <div style="margin-top: 10px">
     <el-row>
-      <el-carousel :interval="5000" arrow="always" type="card">
+      <!-- <el-carousel :interval="5000" arrow="always" type="card">
         <el-carousel-item >
           <img src="@/assets/carousel/1.png" class="carousel-img">
         </el-carousel-item>
@@ -14,7 +14,7 @@
         <el-carousel-item >
           <img src="@/assets/carousel/4.png" class="carousel-img">
         </el-carousel-item>
-      </el-carousel>
+      </el-carousel> -->
     </el-row>
     <el-row class="app-item-contain">
       <h3 class="index-title-h3" style="border-left: solid 10px #3651d4;">任务中心</h3>
@@ -36,10 +36,10 @@
                     <el-button  type="text" size="small">开始答题</el-button>
                   </router-link>
                   <router-link target="_blank" :to="{path:'/edit',query:{id:paperItem.examPaperAnswerId}}" v-else-if="paperItem.status === 1">
-                    <el-button  type="text" size="small">批改试卷</el-button>
+                    <el-button  type="text" size="small">批改考试</el-button>
                   </router-link>
                   <router-link target="_blank" :to="{path:'/read',query:{id:paperItem.examPaperAnswerId}}" v-else-if="paperItem.status === 2">
-                    <el-button  type="text" size="small">查看试卷</el-button>
+                    <el-button  type="text" size="small">查看考试</el-button>
                   </router-link>
                 </td>
               </tr>
@@ -49,7 +49,7 @@
       </div>
     </el-row>
     <el-row class="app-item-contain">
-      <h3 class="index-title-h3">固定试卷</h3>
+      <h3 class="index-title-h3">模拟考试</h3>
       <div style="padding-left: 15px">
         <el-col :span="4" v-for="(item, index) in fixedPaper" :key="index" :offset="index > 0 ? 1 : 0">
           <el-card :body-style="{ padding: '0px' }" v-loading="loading">
@@ -67,7 +67,7 @@
       </div>
     </el-row>
     <el-row class="app-item-contain">
-      <h3 class="index-title-h3" style="border-left: solid 10px rgb(220, 208, 65);">时段试卷</h3>
+      <h3 class="index-title-h3" style="border-left: solid 10px rgb(220, 208, 65);">定时考试</h3>
       <div style="padding-left: 15px">
         <el-col :span="4" v-for="(item, index) in timeLimitPaper" :key="index" :offset="index > 0 ? 1 : 0">
           <el-card :body-style="{ padding: '0px' }" v-loading="loading">

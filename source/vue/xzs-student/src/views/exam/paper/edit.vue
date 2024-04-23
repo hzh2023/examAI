@@ -18,8 +18,8 @@
     <el-header class="align-center">
       <h1>{{form.name}}</h1>
       <div>
-        <span class="question-title-padding">试卷得分：{{answer.score}}</span>
-        <span class="question-title-padding">试卷耗时：{{formatSeconds(answer.doTime)}}</span>
+        <span class="question-title-padding">考试得分：{{answer.score}}</span>
+        <span class="question-title-padding">考试耗时：{{formatSeconds(answer.doTime)}}</span>
       </div>
     </el-header>
     <el-main>
@@ -92,7 +92,7 @@ export default {
       _this.formLoading = true
       examPaperAnswerApi.edit(this.answer).then(re => {
         if (re.code === 1) {
-          _this.$alert('试卷得分：' + re.response + '分', '考试结果', {
+          _this.$alert('考试得分：' + re.response + '分', '考试结果', {
             confirmButtonText: '返回考试记录',
             callback: action => {
               _this.$router.push('/record/index')

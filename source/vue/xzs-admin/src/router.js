@@ -78,7 +78,7 @@ const constantRoutes = [
     component: Layout,
     name: 'ExamPage',
     meta: {
-      title: '卷题管理',
+      title: '题库管理',
       icon: 'exam'
     },
     children: [
@@ -86,20 +86,20 @@ const constantRoutes = [
         path: 'paper/list',
         component: () => import('@/views/exam/paper/list'),
         name: 'ExamPaperPageList',
-        meta: { title: '试卷列表', noCache: true }
+        meta: { title: '考试列表', noCache: true }
       },
       {
         path: 'paper/edit',
         component: () => import('@/views/exam/paper/edit'),
         name: 'ExamPaperEdit',
-        meta: { title: '试卷编辑', noCache: true, activeMenu: '/exam/paper/list' },
+        meta: { title: '考试编辑', noCache: true, activeMenu: '/exam/paper/list' },
         hidden: true
       },
       {
         path: 'question/list',
         component: () => import('@/views/exam/question/list'),
         name: 'ExamQuestionPageList',
-        meta: { title: '题目列表', noCache: true }
+        meta: { title: '题库', noCache: true }
       },
       {
         path: 'question/edit/singleChoice',
@@ -167,7 +167,7 @@ const constantRoutes = [
     component: Layout,
     name: 'EducationPage',
     meta: {
-      title: '教育管理',
+      title: '学科管理',
       icon: 'education'
     },
     alwaysShow: true,

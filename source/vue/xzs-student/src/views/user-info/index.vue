@@ -7,7 +7,7 @@
             <span>个人信息</span>
           </div>
           <el-row style="text-align: center">
-            <el-upload action="/api/student/upload/image"  accept=".jpg,.png" :show-file-list="false"  :on-success="uploadSuccess">
+            <el-upload action="/api/student/upload/image"  accept=".jpg,.png" :show-file-list="true"  :on-success="uploadSuccess" name="file">
               <el-avatar class="el-dropdown-avatar" :size="100" :src="form.imagePath === null ? require('@/assets/avatar.png') : form.imagePath"></el-avatar>
             </el-upload>
           </el-row>
@@ -17,7 +17,7 @@
           <el-divider/>
           <el-row class="user-info-fullInfo">
             <label>姓名：{{form.realName}}</label><br/>
-            <label>年级：{{levelFormatter(form.userLevel)}}</label><br/>
+            <label>级别：{{levelFormatter(form.userLevel)}}</label><br/>
             <label>注册时间：{{form.createTime}}</label><br/>
           </el-row>
         </el-card>
@@ -56,8 +56,8 @@
                 <el-form-item label="手机：">
                   <el-input v-model="form.phone"></el-input>
                 </el-form-item>
-                <el-form-item label="年级：" prop="userLevel" required>
-                  <el-select v-model="form.userLevel" placeholder="年级">
+                <el-form-item label="级别：" prop="userLevel" required>
+                  <el-select v-model="form.userLevel" placeholder="级别">
                     <el-option v-for="item in levelEnum" :key="item.key" :value="item.key"
                                :label="item.value"></el-option>
                   </el-select>
@@ -99,7 +99,7 @@ export default {
           { required: true, message: '请输入真实姓名', trigger: 'blur' }
         ],
         userLevel: [
-          { required: true, message: '请选择年级', trigger: 'change' }
+          { required: true, message: '请选择级别', trigger: 'change' }
         ]
       }
     }

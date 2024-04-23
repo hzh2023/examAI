@@ -2,11 +2,9 @@
   <div class="sidebar-logo-container" :class="{'collapse':collapse}">
     <transition name="sidebarLogoFade">
       <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
-        <img  src="@/assets/logo.png" class="sidebar-logo">
         <h1  class="sidebar-title">{{ title }} </h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <img  src="@/assets/logo.png" class="sidebar-logo">
         <h1 class="sidebar-title">{{ title }} </h1>
       </router-link>
     </transition>
@@ -24,7 +22,7 @@ export default {
   },
   data () {
     return {
-      title: '学之思管理系统'
+      title: '人工智能等级考试系统'
     }
   }
 }
@@ -45,7 +43,7 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #2b2f3a;
+  background: #FFFFFF;
   text-align: center;
   overflow: hidden;
 
@@ -62,7 +60,7 @@ export default {
     & .sidebar-title {
       display: inline-block;
       margin: 0;
-      color: #fff;
+      color: #000000;
       font-weight: 600;
       line-height: 50px;
       font-size: 14px;

@@ -28,7 +28,7 @@ const router = new Router({
           path: 'index',
           component: () => import('@/views/paper/index'),
           name: 'PaperIndex',
-          meta: { title: '试卷中心' }
+          meta: { title: '考试中心' }
         }
       ]
     },
@@ -80,9 +80,9 @@ const router = new Router({
         }
       ]
     },
-    { path: '/do', name: 'ExamPaperDo', component: () => import('@/views/exam/paper/do'), meta: { title: '试卷答题' } },
-    { path: '/edit', name: 'ExamPaperEdit', component: () => import('@/views/exam/paper/edit'), meta: { title: '试卷批改' } },
-    { path: '/read', name: 'ExamPaperRead', component: () => import('@/views/exam/paper/read'), meta: { title: '试卷查看' } },
+    { path: '/do', name: 'ExamPaperDo', component: () => import('@/views/exam/paper/do'), meta: { title: '考试答题' } },
+    { path: '/edit', name: 'ExamPaperEdit', component: () => import('@/views/exam/paper/edit'), meta: { title: '考试批改' } },
+    { path: '/read', name: 'ExamPaperRead', component: () => import('@/views/exam/paper/read'), meta: { title: '考试查看' } },
     { path: '*', component: () => import('@/views/error-page/404'), meta: { title: '404' }
     }
   ]

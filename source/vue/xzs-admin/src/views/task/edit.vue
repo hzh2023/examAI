@@ -2,15 +2,15 @@
   <div class="app-container">
 
     <el-form :model="form" ref="form" label-width="100px" v-loading="formLoading" :rules="rules">
-      <el-form-item label="年级：" prop="gradeLevel"  required>
-        <el-select v-model="form.gradeLevel" placeholder="年级" @change="levelChange" >
+      <el-form-item label="级别：" prop="gradeLevel"  required>
+        <el-select v-model="form.gradeLevel" placeholder="级别" @change="levelChange" >
           <el-option v-for="item in levelEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="标题："  prop="title" required>
         <el-input v-model="form.title"></el-input>
       </el-form-item>
-      <el-form-item label="试卷："  required>
+      <el-form-item label="考试："  required>
         <el-table  :data="form.paperItems" border fit highlight-current-row style="width: 100%">
           <el-table-column prop="subjectId" label="学科" :formatter="subjectFormatter" width="120px" />
           <el-table-column prop="name" label="名称"  />
@@ -25,7 +25,7 @@
       <el-form-item>
         <el-button type="primary" @click="submitForm">提交</el-button>
         <el-button @click="resetForm">重置</el-button>
-        <el-button type="success" @click="addPaper">添加试卷</el-button>
+        <el-button type="success" @click="addPaper">添加考试</el-button>
       </el-form-item>
     </el-form>
 
@@ -92,7 +92,7 @@ export default {
         total: 0
       },
       rules: {
-        gradeLevel: [{ required: true, message: '请输入年级', trigger: 'change' }],
+        gradeLevel: [{ required: true, message: '请输入级别', trigger: 'change' }],
         title: [{ required: true, message: '请输入任务标题', trigger: 'blur' }]
       }
     }

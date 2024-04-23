@@ -20,7 +20,7 @@
                  <el-button  type="text" size="small">批改</el-button>
                </router-link>
                <router-link target="_blank" :to="{path:'/read',query:{id:row.id}}" v-if="row.status === 2 ">
-                 <el-button  type="text" size="small">查看试卷</el-button>
+                 <el-button  type="text" size="small">查看考试</el-button>
                </router-link>
              </template>
            </el-table-column>
@@ -37,7 +37,7 @@
               <el-form-item label="最终得分：">
                 <span>{{selectItem.userScore}}</span>
               </el-form-item>
-              <el-form-item label="试卷总分：">
+              <el-form-item label="考试总分：">
                 <span>{{selectItem.paperScore}}</span>
               </el-form-item>
               <el-form-item label="正确题数：">

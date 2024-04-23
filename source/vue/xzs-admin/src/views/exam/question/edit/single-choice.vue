@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
     <el-form :model="form" ref="form" label-width="100px" v-loading="formLoading" :rules="rules">
-      <el-form-item label="年级：" prop="gradeLevel" required>
-        <el-select v-model="form.gradeLevel" placeholder="年级"  @change="levelChange" clearable>
+      <el-form-item label="级别：" prop="gradeLevel" required>
+        <el-select v-model="form.gradeLevel" placeholder="级别"  @change="levelChange" clearable>
           <el-option v-for="item in levelEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
@@ -40,6 +40,9 @@
         <el-button @click="resetForm">重置</el-button>
         <el-button type="success" @click="questionItemAdd">添加选项</el-button>
         <el-button type="success" @click="showQuestion">预览</el-button>
+        <el-upload action="/api/student/upload/questions"  accept=".xlsx" :show-file-list="true"  :on-success="uploadSuccess" name="file">
+          <el-button type="success">导入excel</el-button>
+        </el-upload>
       </el-form-item>
     </el-form>
     <el-dialog  :visible.sync="richEditor.dialogVisible"  append-to-body :close-on-click-modal="false" style="width: 100%;height: 100%"   :show-close="false" center>
@@ -88,7 +91,7 @@ export default {
       formLoading: false,
       rules: {
         gradeLevel: [
-          { required: true, message: '请选择年级', trigger: 'change' }
+          { required: true, message: '请选择级别', trigger: 'change' }
         ],
         subjectId: [
           { required: true, message: '请选择学科', trigger: 'change' }

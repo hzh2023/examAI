@@ -13,7 +13,7 @@
 
     <el-table v-loading="listLoading" :data="tableData" border fit highlight-current-row style="width: 100%">
       <el-table-column prop="id" label="Id"  width="100" />
-      <el-table-column prop="paperName" label="试卷名称"/>
+      <el-table-column prop="paperName" label="考试名称"/>
       <el-table-column prop="userName" label="用户名称"/>
       <el-table-column  label="得分" width="100px" >
         <template slot-scope="{row}">

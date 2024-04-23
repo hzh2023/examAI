@@ -1,8 +1,8 @@
 <template>
   <div class="app-container">
     <el-form :model="form" ref="form" label-width="100px" v-loading="formLoading" :rules="rules">
-      <el-form-item label="年级：" prop="level" required>
-        <el-select v-model="form.level" placeholder="年级"  @change="levelChange">
+      <el-form-item label="级别：" prop="level" required>
+        <el-select v-model="form.level" placeholder="级别"  @change="levelChange">
           <el-option v-for="item in levelEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
@@ -12,8 +12,8 @@
                      :label="item.name+' ( '+item.levelName+' )'"></el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="试卷类型：" prop="paperType" required>
-        <el-select v-model="form.paperType" placeholder="试卷类型">
+      <el-form-item label="考试类型：" prop="paperType" required>
+        <el-select v-model="form.paperType" placeholder="考试类型">
           <el-option v-for="item in paperTypeEnum" :key="item.key" :value="item.key" :label="item.value"></el-option>
         </el-select>
       </el-form-item>
@@ -22,7 +22,7 @@
                         range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期">
         </el-date-picker>
       </el-form-item>
-      <el-form-item label="试卷名称："  prop="name" required>
+      <el-form-item label="考试名称："  prop="name" required>
         <el-input v-model="form.name"/>
       </el-form-item>
       <el-form-item :key="index" :label="'标题'+(index+1)+'：'" required v-for="(titleItem,index) in form.titleItems">
@@ -113,16 +113,16 @@ export default {
       formLoading: false,
       rules: {
         level: [
-          { required: true, message: '请选择年级', trigger: 'change' }
+          { required: true, message: '请选择级别', trigger: 'change' }
         ],
         subjectId: [
           { required: true, message: '请选择学科', trigger: 'change' }
         ],
         paperType: [
-          { required: true, message: '请选择试卷类型', trigger: 'change' }
+          { required: true, message: '请选择考试类型', trigger: 'change' }
         ],
         name: [
-          { required: true, message: '请输入试卷名称', trigger: 'blur' }
+          { required: true, message: '请输入考试名称', trigger: 'blur' }
         ],
         suggestTime: [
           { required: true, message: '请输入建议时长', trigger: 'blur' }
